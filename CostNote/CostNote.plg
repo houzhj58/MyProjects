@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CostNote - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP2BF3.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/CostNote.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\C++ÏîÄ¿\CostNote\CostNoteDlg.cpp"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP2BF3.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP2BF4.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CostNote.pdb" /debug /machine:I386 /out:"Debug/CostNote.exe" /pdbtype:sept 
+".\Debug\CostNote.obj"
+".\Debug\CostNoteDlg.obj"
+".\Debug\Login.obj"
+".\Debug\SalaryItems.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CostNote.res"
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP2BF4.tmp"
+<h3>Output Window</h3>
+Compiling...
+CostNoteDlg.cpp
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/CostNote.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\CostNote.sbr" ".\Debug\CostNoteDlg.sbr" ".\Debug\Login.sbr" ".\Debug\SalaryItems.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+CostNote.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
