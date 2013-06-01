@@ -461,7 +461,9 @@ void CMyList::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 			} else if (CSTempType == "Õ‚ΩË")
 			{
 				txtColor = RGB(250,0,0);
-			}else
+			}else if(CSTempType == " ’»Î"){
+				txtColor = RGB(0,0,250);
+			} else
 			{
 				txtColor = GetSysColor(COLOR_WINDOWTEXT);
 			}

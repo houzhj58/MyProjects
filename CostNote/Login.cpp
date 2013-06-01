@@ -51,7 +51,7 @@ void Login::OnOK()
 	// TODO: Add extra validation here
 	UpdateData(TRUE);
 	if (m_name == "houzhijian"
-		&& m_password == "houzhijian")
+		&& m_password == "fml")
 	{
 		theApp.m_pMainWnd = NULL;
 		this->ShowWindow(0);
