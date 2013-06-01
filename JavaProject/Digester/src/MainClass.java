@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.apache.commons.digester.*;
@@ -12,8 +13,17 @@ public class MainClass {
 	 * @param args
 	 * @throws SAXException 
 	 * @throws IOException 
+	 * @throws FileNotFoundException 
+	 * @throws SAXException 
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws IOException, SAXException {
+	public static void main(String[] args) throws FileNotFoundException, IOException, SAXException{
+		MainClass mainclass = new MainClass();
+		Library library = mainclass.DigesterXML(args[0]);
+		System.out.println(" 图书馆: " + library.getName());
+		System.exit(0);
+	}
+	public Library DigesterXML(String XmlPath) throws FileNotFoundException, IOException, SAXException{
 		Digester digester = new Digester();
 		//指定它不要用DTD验证XML文档的合法性——这是因为我们没有为XML文档定义DTD 
 		digester.setValidating(false);
@@ -54,9 +64,8 @@ public class MainClass {
 		// -----第2层元素结束   
 		digester.addSetNext("library/book", "addBook");  
 		// -----第1层元素结束  
-		Library library = (Library) digester.parse(new FileInputStream("D:\\books.xml"));
+		return (Library) digester.parse(new FileInputStream(XmlPath));
 		//Library library = (Library) digester.parse(MainClass.class.getResourceAsStream("D:\\books.xml"));
-		System.out.println(" 图书馆: " + library.getName());
 	}
 
 }
