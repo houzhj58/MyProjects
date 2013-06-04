@@ -1,6 +1,9 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.MessageFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
 
 import org.apache.commons.digester.*;
 import org.xml.sax.SAXException;
@@ -21,6 +24,17 @@ public class MainClass {
 		MainClass mainclass = new MainClass();
 		Library library = mainclass.DigesterXML(args[0]);
 		System.out.println(" 图书馆: " + library.getName());
+		
+		//for each语句的使用   在输出一个object时，该object必须实现了toString方法。
+		for(Book book:library.getBookList()){
+			System.out.println(book);
+		}
+		//MessageFormat的使用
+		String SQL = MessageFormat.format("select * from Mytable where username = {0}", "houzhijian");
+		System.out.println(SQL);
+		double dtemp = Math.random();
+		String stemp = NumberFormat.getPercentInstance().format(dtemp);//调用当前系统设置的百分比的输出方式
+		System.out.println(stemp);
 		System.exit(0);
 	}
 	public Library DigesterXML(String XmlPath) throws FileNotFoundException, IOException, SAXException{

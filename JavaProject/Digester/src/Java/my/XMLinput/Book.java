@@ -6,7 +6,8 @@ import java.util.List;
 public class Book {
 	private String        title;  
 	private String        author;  
-	private List<Chapter> chapters = new ArrayList<Chapter>();  
+	private ArrayList<Chapter> chapters = new ArrayList<Chapter>();  //泛型的使用
+	//private List<Chapter> chapters = new ArrayList<Chapter>();  //当使用List去定义的时候，是使用了借口，而Arraylist实现了List的借口
 	 /** 
 	* 这个方法，用来演示xml的解析时用的另一种方式 
 	* @param title 
@@ -16,7 +17,14 @@ public class Book {
 	    this.title = title;  
 	    this.author = author;  
 	}  
-	 public void addChapter(Chapter chapter) {  
+	 /* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Book title:"+title +"Book author: "+ author;
+	}
+	public void addChapter(Chapter chapter) {  
 	   this.chapters.add(chapter);  
 	}  
 	 public String getTitle() {  
@@ -34,7 +42,7 @@ public class Book {
 	  public List<Chapter> getChapters() {  
 	        return chapters;  
 	   }  
-	  public void setChapters(List<Chapter> chapters) {  
+	  public void setChapters(ArrayList<Chapter> chapters) {  
 	      this.chapters = chapters;  
 	   } 
 }
